@@ -1,0 +1,90 @@
+ext {
+    // Android
+    COMPILE_SDK_VERSION = 26
+    BUILD_TOOLS_VERSION = '26.0.2'
+    MIN_SDK_VERSION = 15 //15以上系统才支持webp，目前没有4.0的用户，可以升级到15.
+    TARGET_SDK_VERSION = 19
+
+    ROOTDIR = rootDir.getAbsolutePath()
+
+    GRADLES = [
+            baseconfig          : "${ROOTDIR}/gradles/baseconfig.gradle",
+            processor           : "${ROOTDIR}/gradles/processor.gradle",
+            setkeystore         : "${ROOTDIR}/gradles/setkeystore.gradle",
+    ]
+
+    //defautl_config
+    DEFAULE_CONFIG = [
+            applicationId: "com.howard.empty",
+            versionCode  : '1800',
+            versionName  : '1.800'
+    ]
+
+    // SUPPORT
+    SUPPORT_VERSION = '26.0.0-alpha1'
+    SUPPORT = [
+            supportV4   : "com.android.support:support-v4:${SUPPORT_VERSION}",
+            supportV13  : "com.android.support:support-v13:${SUPPORT_VERSION}",
+            appcompatV7 : "com.android.support:appcompat-v7:${SUPPORT_VERSION}",
+            cardview    : "com.android.support:cardview-v7:${SUPPORT_VERSION}",
+            recyclerView: "com.android.support:recyclerview-v7:${SUPPORT_VERSION}",
+            design      : "com.android.support:design:${SUPPORT_VERSION}",
+            annotations : "com.android.support:support-annotations:${SUPPORT_VERSION}",
+            multidex    : 'com.android.support:multidex:1.0.1'
+    ]
+
+    butterknife_version="8.5.1"
+    parceler_version="1.1.4"
+    router_version="2.4.4"
+    retrofit_version='2.2.0'
+    leakcanary_version="1.4-beta2"
+    blockcanary_version="1.5.0"
+    rxandroid_version="2.0.1"
+    APPUPDATE_VERSION="1.0.9"
+    DEV = [
+            parceler            : "org.lzh.compiler.parceler:parceler-api:$parceler_version",
+            parcelerApt         : "org.lzh.compiler.parceler:parceler-compiler:$parceler_version",
+            router              : "com.github.yjfnypeu.Router:router-api:$router_version",
+            routerApt           : "com.github.yjfnypeu.Router:router-compiler:$router_version",
+            retrofit            : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            rxjava_adapter      : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            fastjson            : 'com.jm.android:jmfastjson:1.0.2',
+            fastjsonConvert     : 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0',
+            protobufConvert     : "com.squareup.retrofit2:converter-protobuf:$retrofit_version",
+            glide               : 'com.github.bumptech.glide:glide:3.7.0',
+            greendao            : 'org.greenrobot:greendao:3.2.2',
+            plog                : 'org.mym.plog:plog-core:2.0.0-beta2',
+            formatter                : 'org.mym.plog:plog-formatter:2.0.0-beta2',
+            butterknife         : "com.jakewharton:butterknife:$butterknife_version",
+            butterknifeApt      : "com.jakewharton:butterknife-compiler:$butterknife_version",
+            debugDB             : 'com.amitshekhar.android:debug-db:1.0.0',
+            sensorsdata         : 'com.jm.android.sensor:sensorsdk:2.0.4@aar',
+            leakcanary          : "com.squareup.leakcanary:leakcanary-android:$leakcanary_version",
+            leakcanaryNoOp      : "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version",
+            blockcanary         : "com.github.markzhai:blockcanary-android:$blockcanary_version",
+            blockcanaryNoOp     : "com.github.markzhai:blockcanary-no-op:$blockcanary_version",
+            easyThread          : "com.github.yjfnypeu:EasyThread:0.2.0",
+            rxandroid           : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxjava              : "io.reactivex.rxjava2:rxjava:2.1.0",
+            wechat              : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:1.1.6",
+//            appupdate           : "com.jumei.appupdate:appupdate:${APPUPDATE_VERSION}",
+            easyadapter         : 'uk.co.ribot:easyadapter:1.5.0@aar',
+            routerRePluginHost      : 'com.github.yjfnypeu.Router-RePlugin:host:0.3',
+            routerRePlugin      : 'com.github.yjfnypeu.Router-RePlugin:plugin:0.3',
+            iconics             : 'com.mikepenz:iconics-core:3.0.0@aar'
+            // 三方登录 https://github.com/tianzhijiexian/ShareLoginLib
+//            shareLogin          :'com.github.tianzhijiexian:ShareLoginLib:1.3.8',
+    ]
+
+    THIRD = [
+            aMap3d              : "com.amap.api:3dmap:latest.integration",
+            aMapSearch          : "com.amap.api:search:latest.integration",
+    ]
+
+    QRCode_version = "1.1.7"
+    VIEW = [
+            // 扫二维码 https://github.com/bingoogolapple/BGAQRCode-Android
+            bgaZBarCore           : "cn.bingoogolapple:bga-qrcodecore:$QRCode_version@aar",
+            bgaZBar               : "cn.bingoogolapple:bga-zbar:$QRCode_version@aar",
+    ]
+}

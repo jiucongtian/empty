@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply from: "${GRADLES.baseconfig}"
+
+android {
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile "${SUPPORT.appcompatV7}"
+    compile "${DEV.butterknife}"
+    compile "${DEV.butterknifeApt}"
+    compile "${DEV.iconics}"
+}

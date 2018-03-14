@@ -1,0 +1,41 @@
+def isApp = project.plugins.findPlugin('com.android.application')
+//apply from: "${GRADLES.processor}"
+//
+//if (isApp) {
+//    apply from: "${GRADLES.setkeystore}"
+//}
+
+android {
+    compileSdkVersion Integer.parseInt("${COMPILE_SDK_VERSION}")
+    buildToolsVersion "${BUILD_TOOLS_VERSION}"
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt("${MIN_SDK_VERSION}")
+        targetSdkVersion Integer.parseInt("${TARGET_SDK_VERSION}")
+
+        versionCode Integer.parseInt("${DEFAULE_CONFIG.versionCode}")
+        versionName "${DEFAULE_CONFIG.versionName}"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+//    if (isApp) {
+//        debugCompile "${DEV.debugDB}"
+//        releaseCompile "${DEV.sensorsdata}"
+//        debugCompile "${DEV.leakcanary}"
+//        releaseCompile "${DEV.leakcanaryNoOp}"
+//    }
+}
